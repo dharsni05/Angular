@@ -1,12 +1,12 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
   "cli": {
-    "analytics": "3900af40-fb68-4433-9500-a4ec00a35771"
+    "analytics": "2756c069-40f5-402b-8c26-75e37a7e4a35"
   },
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "MinimumSumService": {
+    "pipes": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:application": {
@@ -20,7 +20,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/MinimumSumService",
+            "outputPath": "dist/pipes",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -71,10 +71,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "MinimumSumService:build:production"
+              "browserTarget": "pipes:build:production"
             },
             "development": {
-              "browserTarget": "MinimumSumService:build:development"
+              "browserTarget": "pipes:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -82,7 +82,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "MinimumSumService:build"
+            "browserTarget": "pipes:build"
           }
         },
         "test": {
@@ -105,5 +105,5 @@
       }
     }
   },
-  "defaultProject": "MinimumSumService"
+  "defaultProject": "pipes"
 }
