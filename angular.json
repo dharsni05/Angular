@@ -1,12 +1,12 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
   "cli": {
-    "analytics": "e777b580-13d8-438d-ae85-38937cd8f976"
+    "analytics": "3900af40-fb68-4433-9500-a4ec00a35771"
   },
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "project1": {
+    "MinimumSumService": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:application": {
@@ -20,7 +20,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/project1",
+            "outputPath": "dist/MinimumSumService",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -30,7 +30,6 @@
               "src/assets"
             ],
             "styles": [
-              "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
               "src/styles.css"
             ],
             "scripts": []
@@ -72,10 +71,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "project1:build:production"
+              "browserTarget": "MinimumSumService:build:production"
             },
             "development": {
-              "browserTarget": "project1:build:development"
+              "browserTarget": "MinimumSumService:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -83,7 +82,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "project1:build"
+            "browserTarget": "MinimumSumService:build"
           }
         },
         "test": {
@@ -98,7 +97,6 @@
               "src/assets"
             ],
             "styles": [
-              "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
               "src/styles.css"
             ],
             "scripts": []
@@ -107,5 +105,5 @@
       }
     }
   },
-  "defaultProject": "project1"
+  "defaultProject": "MinimumSumService"
 }
