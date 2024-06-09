@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+ 
+<head>
+  <title>3D Train Model</title>
+</head>
+<style>
+
+ 
+.carriage {
+  width: 100px;
+  height: 50px;
+  background: grey;
+  position: relative;
+  transform-style: preserve-3d;
+  transform: rotateY(45deg);
+  color: red;
+}
+
+ 
+.wheel {
+  width: 20px;
+  height: 20px;
+  background: cyan;
+  position: absolute;
+  bottom: 0;
+  border-radius: 50px;
+  transform-style: preserve-3d;
+  transform: rotateX(90deg);
+  color:blue;
+}
+
+ 
+.body {
+  width: 200px;
+  height: 50px;
+  background: violet;
+  position: relative;
+  transform-style: preserve-3d;
+  transform: rotateY(45deg);
+  color:green;
+}
+
+ </style>
+<body>
+  <div class="train">
+    <div class="carriage">
+      <div class="wheel"></div>
+      <div class="wheel"></div>
+      <div class="body"></div>
+    </div>
+  </div>
+</body>
+</html>

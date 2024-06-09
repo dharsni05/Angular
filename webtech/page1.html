@@ -1,0 +1,161 @@
+ <!DOCTYPE html>
+<html>
+<head>
+<title>MY WEBPAGE</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+        }
+        form {
+            max-width: 400px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: lightblue;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+		select {
+			padding: 8px;
+			font-size: 16px;
+			 border: 1px solid #ccc;
+		}
+		fieldset {
+			color: red;
+		
+		}
+		label {
+			color: darkblue;
+		
+		}
+		a {
+			color: black;
+		
+		}
+		h2 {
+			color: yellow;
+			text-align:center;
+		}
+        input[type="text"], select {
+            width: 100%;
+            padding: 10px;
+            margin: 8px 0;
+            display: inline-block;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+		input[type="number"], select {
+            width: 100%;
+            padding: 10px;
+            margin: 8px 0;
+            display: inline-block;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+		input[type="email"], select {
+            width: 100%;
+            padding: 10px;
+            margin: 8px 0;
+            display: inline-block;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+		input[type="tel"], select {
+            width: 100%;
+            padding: 10px;
+            margin: 8px 0;
+            display: inline-block;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+		
+		textarea {
+           width: 100%;
+            padding: 10px;
+            margin: 8px 0;
+            display: inline-block;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+		 
+        input[type="submit"] {
+            width: 100%;
+            background-color: #4CAF50;
+            color: white;
+            padding: 14px 20px;
+            margin: 8px 0;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;  
+        }
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+
+<form action="thankyou.html" method="post">
+    <h2>Enter Your Bio Data</h2>
+	<p id="personal">
+	<a href="#academic">Academic</a>
+	<fieldset id="personal">
+	<legend><i>PERSONAL</i></legend>
+	<br>
+    <label for="name"><b>Name:</b></label>
+    <input type="text" id="name" name="name" required>
+	
+	<label for="fname"><b>Father's Name:</b></label>
+    <input type="text" id="fname" name="fname" required>
+	
+	<label for="mname"><b>Mother's Name:</b></label>
+    <input type="text" id="mname" name="mname" required>
+	
+	<label for="age"><b>Age:</b></label>
+    <input type="number" id="age" name="age" min="15" max="45" required>
+
+	<label for="email"><b>Email:</b></label>
+    <input type="email" id="email" name="email" placeholder="name@domain.com" required>
+	
+    <label for="residence"><b>Residence:</b></label>
+    <input type="text" id="residence" name="residence" required>
+
+	<label for="phone"><b>Phone:</b></label>
+	<input type="tel" id="phone" name="phone" placeholder="+91-xxxx-xxxxxx" pattern="\+91-(?!0{1})[1-9][0-9]{2,5}-[0-9]{6}" required>
+
+    <label><b>Are you a Student?</b></label>
+	<input type="radio" id="yes" value="YES" name="yes">YES
+    <input type="radio" id="no" value="NO" name="no">NO
+	</fieldset>
+	</p>
+	<br>
+	<fieldset id="academic">
+	<legend><i>ACADEMIC</i></legend>
+	<br>
+	 <label for="edu"><b>Choose your Highest Level of Education:</b></label>
+	<select id="edu" name="edu">
+	<option value="choose">Please select your choice</option>
+    <option value="M.Tech">M.Tech</option>
+    <option value="B.Tech">B.Tech</option>
+    <option value="M.E">M.E</option>
+    <option value="B.E">B.E</option>
+	</select>
+	<label for="inst"><b>Institution:</b></label>
+    <input type="text" id="inst" name="inst" required>
+	<label for="fintr"><b>Field of Interest:</b></label>
+    <input type="text" id="fintr" name="fintr" required>
+	<label for="proj"><b>Mention your Academic Projects:</b></label>
+    <textarea name="proj" cols="5" rows="8"></textarea>
+	</fieldset>
+	 <input type="submit" value="Submit">
+	<a href="#personal">Personal</a>
+	
+</form>
+
+</body>
+</html>

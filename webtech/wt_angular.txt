@@ -1,0 +1,60 @@
+2)
+
+import { Component, Input } from '@angular/core';
+
+@Component({
+  selector: 'app-stickman',
+  template: `
+    <div>
+      <input type="number" [(ngModel)]="numberOfStickmen" />
+      <div *ngFor="let stickman of stickmen; let i = index" [ngStyle]="{ 'background-color': i % 2 === 0 ? 'lightblue' : 'lightgreen' }">
+        <div class="stickman">
+          <div class="head"></div>
+          <div class="body"></div>
+          <div class="left-arm"></div>
+          <div class="right-arm"></div>
+          <div class="left-leg"></div>
+          <div class="right-leg"></div>
+        </div>
+      </div>
+    </div>
+  `,
+  styles: [`
+    .stickman {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin: 10px;
+    }
+    .head {
+      width: 20px;
+      height: 20px;
+      background: black;
+      border-radius: 50%;
+      margin-bottom: 5px;
+    }
+    .body {
+      width: 4px;
+      height: 40px;
+      background: black;
+      margin-bottom: 5px;
+    }
+    .left-arm, .right-arm {
+      width: 20px;
+      height: 4px;
+      background: black;
+    }
+    .left-leg, .right-leg {
+      width: 4px;
+      height: 30px;
+      background: black;
+    }
+  `]
+})
+export class StickmanComponent {
+  numberOfStickmen: number = 0;
+  stickmen: any[] = [];
+  ngOnChanges() {
+    this.stickmen = new Array(this.numberOfStickmen);
+  }
+}

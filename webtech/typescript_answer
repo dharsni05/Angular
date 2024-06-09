@@ -1,0 +1,154 @@
+vehicle class
+
+export class Vehicle {
+    private make: string;
+    private model: string;
+    private year: number;
+
+    constructor(make: string, model: string, year: number) {
+        this.make = make;
+        this.model = model;
+        this.year = year;
+    }
+
+    public getMake(): string {
+        return this.make;
+    }
+
+    public getModel(): string {
+        return this.model;
+    }
+}
+
+
+
+stack class
+
+ export class Stack<T> {
+    private stack: T[];
+
+    constructor() {
+        this.stack = [];
+    }
+
+    public push(value: T): void {
+        this.stack.push(value);
+    }
+
+    public pop(): T {
+        if (this.isEmpty()) {
+            throw new Error("Stack is empty");
+        }
+        return this.stack.pop()!;
+    }
+
+    public peek(): T | null {
+        if (this.isEmpty()) {
+            return null;
+        }
+        return this.stack[this.stack.length - 1];
+    }
+
+    public isEmpty(): boolean {
+        return this.stack.length === 0;
+    }
+}
+
+
+to import
+
+import { Stack } from './path/to/Stack';
+
+const stack = new Stack<number>();
+stack.push(1);
+stack.push(2);
+console.log(stack.peek()); // Output: 2
+console.log(stack.isEmpty()); // Output: false
+
+
+to export
+ export class Stack<T> {
+  private stack: T[];
+
+  constructor() {
+    this.stack = [];
+  }
+
+  push(value: T): void {
+    this.stack.push(value);
+  }
+
+  pop(): T | undefined {
+    if (this.isEmpty()) {
+      throw new Error("Stack is empty");
+    }
+    return this.stack.pop();
+  }
+
+  peek(): T | undefined {
+    if (this.isEmpty()) {
+      return undefined;
+    }
+    return this.stack[this.stack.length - 1];
+  }
+
+  isEmpty(): boolean {
+    return this.stack.length === 0;
+  }
+}
+
+html
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Element Search and Highlight</title>
+  <style>
+    .highlight {
+      background-color: yellow;
+    }
+  </style>
+</head>
+<body>
+  <input type="text" id="searchInput">
+  <button onclick="searchAndHighlight()">Search</button>
+
+  <div>
+    <!-- Example elements on the page -->
+    <p>This is the first paragraph.</p>
+    <p>This is the second paragraph.</p>
+    <p>This is the third paragraph.</p>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
+
+
+js
+
+function searchAndHighlight() {
+  var searchInput = document.getElementById('searchInput');
+  var searchText = searchInput.value.toLowerCase();
+  var paragraphs = document.getElementsByTagName('p');
+
+  for (var i = 0; i < paragraphs.length; i++) {
+    var paragraph = paragraphs[i];
+    var text = paragraph.textContent.toLowerCase();
+
+    if (text.includes(searchText)) {
+      paragraph.classList.add('highlight');
+    } else {
+      paragraph.classList.remove('highlight');
+    }
+  }
+}
+
+
+css
+
+.highlight {
+  background-color: yellow;
+}
+
+

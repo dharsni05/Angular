@@ -1,0 +1,30 @@
+#clock {
+ 
+	position:absolute;
+    font-size: 175px;
+    width: 1000px;
+    margin: 200px;
+	padding:4px;
+    text-align:center;
+    border: 3px solid black;
+    border-radius: 20px;
+    background-color: bisque;
+    color:black;
+    font-family: 'times new roman';
+    font-style:bold;
+    box-shadow: 0 0 50px black;
+	
+}
+#date {
+	font-size: 125px;
+    width: 1000px;
+    margin: 200px;
+    text-align: center;
+    border: 3px solid black;
+    border-radius: 20px;
+    background-color: lightpink;
+    color:black;
+    font-family: 'times new roman';
+    font-style:bold;
+    box-shadow: 0 0 50px black;
+}

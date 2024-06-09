@@ -1,0 +1,80 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+select, input {
+  margin: 5px;
+}
+
+div {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin: 10px;
+}
+
+<div [style.background-color]="selectedColor">
+  <div>
+    <select [(ngModel)]="selectedColor">
+      <option value="black">Black</option>
+      <option value="red">Red</option>
+      <option value="blue">Blue</option>
+      <!-- Add more color options as needed -->
+    </select>
+  </div>
+
+  <div>
+    <input type="text" [(ngModel)]="inputText" placeholder="Enter text">
+  </div>
+
+  <div [style.color]="selectedColor">
+    {{ inputText }}
+  </div>
+</div>
+
+
+To create a directive in Angular 13 that generates stickmen with alternating colors based on user input, follow these steps:
+
+Create a directive to generate stickmen and apply alternating colors:
+typescript
+Copy Code
+import { Directive, Input, TemplateRef, ViewContainerRef } from '@angular/core';
+
+@Directive({
+  selector: '[appAlternateColors]'
+})
+export class AlternateColorsDirective {
+  @Input() set appAlternateColors(count: number) {
+    this.viewContainer.clear();
+    for (let i = 0; i < count; i++) {
+      const color = i % 2 === 0 ? 'red' : 'blue'; // Alternate colors
+      this.viewContainer.createEmbeddedView(this.templateRef, { $implicit: color });
+    }
+  }
+
+  constructor(private templateRef: TemplateRef<any>, private viewContainer: ViewContainerRef) { }
+}
+Use the directive in your component's HTML template:
+html
+Copy Code
+<div *appAlternateColors="numberOfStickmen">
+  <ng-template let-color>
+    <div [style.background-color]="color" class="stickman">Stickman</div>
+  </ng-template>
+</div>
+In your component TypeScript file, define the numberOfStickmen variable:
+typescript
+Copy Code
+import { Component } from '@angular/core';
+
+@Component({
+  selector: 'app-stickman',
+  templateUrl: './stickman.component.html',
+  styleUrls: ['./stickman.component.css']
+})
+export class StickmanComponent {
+  numberOfStickmen: number = 0;
+}
+Style the stickmen in the CSS file (stickman.component.css) as needed.

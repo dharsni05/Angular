@@ -1,0 +1,55 @@
+script.ts
+
+
+function highlightText() {
+   const searchInput: HTMLInputElement = document.getElementById('searchInput') as HTMLInputElement;
+   const searchValue: string = searchInput.value.trim();
+   const contentElement: HTMLElement = document.querySelector('.content') as HTMLElement;
+
+   if (searchValue !== '') {
+      const content: string = contentElement.innerHTML;
+      const highlightedContent: string = content.replace(
+         new RegExp(searchValue, 'gi'),
+         '<span class="highlight">$&</span>'
+      );
+      contentElement.innerHTML = highlightedContent;
+   } else {
+      contentElement.innerHTML = contentElement.textContent;
+   }
+}
+
+document.querySelector('button').addEventListener('click', highlightText);
+
+
+highlight.html
+
+<!DOCTYPE html>
+<html>
+<head>
+   <style>
+      .highlight {
+         background-color: yellow;
+         font-weight: bold;
+      }
+   </style>
+</head>
+<body>
+   <div class="content">
+    Once upon a time there was a dear little girl who was loved by every one who looked at her, but most of all by her grandmother,<br>
+     and there was nothing that she would not have given to the child. Once she gave her a little cap of red velvet, which suited her <br>
+     so well that she would never wear anything else. So she was always called Little Red Riding Hood.One day her mother said to her, <br>
+     "Come, Little Red Riding Hood, here is a piece of cake and a bottle of wine. Take them to your grandmother, she is ill and weak,<br>
+      and they will do her good. Set out before it gets hot, and when you are going, walk nicely and quietly and do not run off the<br>
+       path, or you may fall and break the bottle, and then your grandmother will get nothing. And when you go into her room, don't forget to say, <br>
+       good-morning, and don't peep into every corner before you do it." I will take great care, said Little Red Riding Hood to her mother, <br>
+       and gave her hand on it. The grandmother lived out in the wood, half a league from the village, and just as Little Red Riding Hood entered<br>
+        the wood, a wolf met her. Little Red Riding Hood did not know what a wicked creature he was, and was not at all afraid of him. <br>
+   </div>
+   <form>
+      <input type="text" id="searchInput" placeholder="Search...">
+      <button type="button" id="searchButton">Search</button>
+   </form>
+   <script src="script.js"></script>
+</body>
+</html>
+
